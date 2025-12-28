@@ -1,8 +1,8 @@
-# ⚛️ CERN · Quantum Tunneling Simulator (Ultimate Edition)
+# ⚛️ YANKCO · Quantum Tunnelling Simulator (Ultimate Edition)
 
-A professional-grade, real-time **Quantum Tunneling Simulator** based on the time-dependent Schrödinger equation (TDSE).
+A professional-grade, real-time **Quantum Tunnelling Simulator** based on the time-dependent Schrödinger equation (TDSE).
 
-This software bridges the gap between abstract quantum mechanics and observable reality, visualizing how particles behave when encountering energy barriers. It demonstrates phenomena impossible in classical physics—such as tunneling through "walls", wave-packet interference, and quantum biological transport.
+This software bridges the gap between abstract quantum mechanics and observable reality, visualizing how particles behave when encountering energy barriers. It demonstrates phenomena impossible in classical physics—such as tunnelling through "walls", wave-packet interference, and quantum biological transport.
 
 Built with **Python**, **NumPy**, **PyQt6**, and **OpenGL** for high-performance scientific visualization.
 
@@ -15,7 +15,7 @@ The simulator now operates with two distinct physical engines to cover different
 ### 1. Standard Hermitian Solver (Physics Engine)
 * **Method:** Split-Step Fourier.
 * **Characteristics:** Preserves probability norm ($\int |\psi|^2 dx = 1$).
-* **Use Case:** Standard tunneling, scattering, and resonant tunneling (Double Barrier).
+* **Use Case:** Standard tunnelling, scattering, and resonant tunnelling (Double Barrier).
 
 ### 2. Bio-Quantum Solver (Photosynthesis Engine)
 * **Method:** Non-Hermitian Dynamics with Imaginary Potentials.
@@ -26,7 +26,7 @@ The simulator now operates with two distinct physical engines to cover different
 
 ## ✨ Visualization & Modes
 
-The simulation offers **5 distinct visualization modes**, rendering real-time 3D surfaces with dynamic coloring based on the physics regime:
+The simulation offers **5 distinct visualization modes**, rendering real-time 3D surfaces with dynamic colouring based on the physics regime:
 
 | Mode | Visualization | Physics Concept | Color Scheme |
 | :--- | :--- | :--- | :--- |
@@ -60,19 +60,19 @@ This simulator demonstrates the exact physical principles behind technologies an
 * **Context:** 5nm and 3nm chips (Apple Silicon, NVIDIA, AMD).
 * **Physics:** Electrons tunnel through insulating barriers (gate oxide), causing "leakage current." This is the fundamental limit of Moore's Law.
 
-### 2. Scanning Tunneling Microscope (STM) 🔬
+### 2. Scanning Tunnelling Microscope (STM) 🔬
 * **Context:** Nanotechnology labs (IBM, CERN).
-* **Physics:** A conductive tip detects atoms without touching them. The current depends exponentially on the tunneling distance.
+* **Physics:** A conductive tip detects atoms without touching them. The current depends exponentially on the tunnelling distance.
 
 ### 3. Nuclear Fusion (The Sun) ☀️
 * **Context:** Astrophysics and ITER.
-* **Physics:** Protons repel each other. Tunneling allows them to breach the **Coulomb Barrier** and fuse, powering stars. Without this, the Sun would not shine.
+* **Physics:** Protons repel each other. Tunnelling allows them to breach the **Coulomb Barrier** and fuse, powering stars. Without this, the Sun would not shine.
 
 ### 4. Quantum Biology (Photosynthesis) 🧬
 * **Context:** Plants and Bacteria (FMO Complex).
 * **Physics:** Modeled in the **"Bio-Quantum"** mode. Excitons use quantum superposition to explore all paths simultaneously, finding the reaction center with near 100% efficiency.
 
-### 5. Resonant Tunneling Diodes 🔮
+### 5. Resonant Tunnelling Diodes 🔮
 * **Context:** High-frequency oscillators (Terahertz).
 * **Physics:** Modeled in the **"Double Barrier"** mode. Waves pass through two barriers perfectly when their energy matches the system's resonance frequency.
 
