@@ -127,6 +127,49 @@ def calculate_transmission(psi: np.ndarray):
     return T * 100.0, R * 100.0
 
 
+# --- ADICIONAR NO FINAL DE Schrödinger_engine.py ---
+
+def set_double_barrier(v0, width, gap):
+    """
+    Cria duas barreiras separadas por um 'gap' (Poço Quântico).
+    Isso gera padrões de interferência e ressonância (Fabry-Pérot).
+    """
+    global V, barreira_center, barreira_width
+    V = np.zeros_like(x)
+
+    # Muro 1 (Esquerda)
+    start1 = barreira_center - gap / 2 - width
+    end1 = barreira_center - gap / 2
+
+    # Muro 2 (Direita)
+    start2 = barreira_center + gap / 2
+    end2 = barreira_center + gap / 2 + width
+
+    mask = ((x >= start1) & (x <= end1)) | ((x >= start2) & (x <= end2))
+    V[mask] = v0
+# No final do arquivo Schrödinger_engine.py
+
+def set_double_barrier_potential(v0, width, gap):
+    """
+    Define o potencial V(x) como uma barreira dupla.
+    v0: Altura das barreiras.
+    width: Largura de cada barreira.
+    gap: Distância entre as duas barreiras.
+    """
+    global V
+    V = np.zeros_like(x)
+
+    # Limites da primeira barreira (esquerda)
+    b1_start = barreira_center - gap / 2 - width
+    b1_end = barreira_center - gap / 2
+
+    # Limites da segunda barreira (direita)
+    b2_start = barreira_center + gap / 2
+    b2_end = barreira_center + gap / 2 + width
+
+    # Aplica o potencial onde estão as barreiras
+    mask = ((x >= b1_start) & (x <= b1_end)) | ((x >= b2_start) & (x <= b2_end))
+    V[mask] = v0
 def normalize(psi: np.ndarray, mode="1D") -> np.ndarray:
     """
     FIX: Correção na normalização 3D.

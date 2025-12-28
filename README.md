@@ -1,124 +1,87 @@
-Aqui está a versão definitiva do seu **`README.md`**.
-
-Eu unifiquei a descrição técnica do projeto com a lista de **Aplicações Reais** (que você enviou em português), traduzindo tudo para o inglês técnico para manter o padrão profissional do GitHub/Portfólio.
-
-Também atualizei a lista de **Features** para incluir as novidades que acabamos de programar (OpenGL, 3D Radial e Terreno).
-
----
-
-# CERN · Quantum Tunneling Simulator (Ultimate Edition)
+# ⚛️ CERN · Quantum Tunneling Simulator (Ultimate Edition)
 
 A professional-grade, real-time **Quantum Tunneling Simulator** based on the time-dependent Schrödinger equation (TDSE).
 
-This software visualizes how quantum particles behave when encountering energy barriers, demonstrating phenomena that are impossible in classical physics—such as tunneling through "walls" and wave-packet interference.
+This software bridges the gap between abstract quantum mechanics and observable reality, visualizing how particles behave when encountering energy barriers. It demonstrates phenomena impossible in classical physics—such as tunneling through "walls", wave-packet interference, and quantum biological transport.
 
 Built with **Python**, **NumPy**, **PyQt6**, and **OpenGL** for high-performance scientific visualization.
 
 ---
 
-## 🔬 Physics Engine
+## 🔬 Dual-Engine Architecture
 
-The simulator solves the **Time-Dependent Schrödinger Equation**:
+The simulator now operates with two distinct physical engines to cover different aspects of quantum reality:
 
-It utilizes the **Split-Step Fourier Method**, a spectral algorithm that is:
+### 1. Standard Hermitian Solver (Physics Engine)
+* **Method:** Split-Step Fourier.
+* **Characteristics:** Preserves probability norm ($\int |\psi|^2 dx = 1$).
+* **Use Case:** Standard tunneling, scattering, and resonant tunneling (Double Barrier).
 
-1. **Unconditionally Stable:** Time steps do not cause explosions.
-2. **Unitary:** Probability is conserved ().
-3. **Fast:** Uses FFT (Fast Fourier Transform) for  complexity.
-
----
-
-## ✨ Key Features
-
-### 1. Multi-Dimensional Visualization
-
-* **1D Cartesian:** Standard textbook visualization of wave packets.
-* **3D Radial:** Simulates spherical symmetry ().
-* **3D Surface (OpenGL):** A topographic "mountain" view of the probability density, rendered with hardware acceleration for analyzing wave spread and tunneling leakage.
-
-### 2. Interactive Potential Barriers
-
-* **Finite Barrier:** Allows for partial transmission and reflection.
-* **Hard Wall:** Automatically switches to infinite potential (Dirichlet boundary) when  is high.
-* **Real-time Controls:** Adjust barrier height () and time-scale on the fly.
-
-### 3. Real-Time Observables
-
-* Calculates **Transmission ()** and **Reflection ()** coefficients instantly.
-* Monitors **Energy Expectation** .
-* Detects physical regimes: **Tunneling** () vs **Scattering** ().
+### 2. Bio-Quantum Solver (Photosynthesis Engine)
+* **Method:** Non-Hermitian Dynamics with Imaginary Potentials.
+* **Characteristics:** Simulates energy absorption/harvesting (The "Sink").
+* **Use Case:** Modeling the FMO Complex in photosynthesis, calculating **Harvesting Efficiency** vs. **Dissipation**.
 
 ---
 
-## 🌍 Real-World Applications (Why this matters?)
+## ✨ Visualization & Modes
 
-This simulator demonstrates the exact physical principle behind technologies and natural phenomena that shape our universe:
+The simulation offers **5 distinct visualization modes**, rendering real-time 3D surfaces with dynamic coloring based on the physics regime:
+
+| Mode | Visualization | Physics Concept | Color Scheme |
+| :--- | :--- | :--- | :--- |
+| **1D Cartesian** | Flat Plot | Standard Wave Mechanics | 🟦 Blue / 🟩 Green |
+| **3D Radial** | Spherical | Expansion from a point source | 🟦 Blue / 🟩 Green |
+| **3D Surface** | Topographic | Terrain view of probability density | 🟦 Blue / 🟩 Green |
+| **Double Barrier** | Dual Walls | **Fabry-Pérot Resonance** (Interference) | 🟦 Cyan / 🟪 Magenta |
+| **Bio-Quantum** | Energy Flow | **Quantum Coherence** in Biology | 🌟 Gold / ⬜ White |
+
+---
+
+## 🎛️ Interactive Controls
+
+### 1. Precision Parameters
+Unlike basic sliders, this edition includes **Exact Input Fields (SpinBoxes)** for laboratory-grade control:
+* **Potential ($V_0$):** Height of the barrier(s).
+* **Width ($w$):** Thickness of the barrier or protein gap.
+* **Energy ($E$):** Initial kinetic energy of the particle.
+* **Spread ($\sigma$):** Uncertainty of the wavepacket.
+
+### 2. Educational Explainer Panel
+A collapsible widget that provides context-sensitive scientific explanations for laypeople, updating dynamically as you switch modes (e.g., explaining "Resonance" when in Double Barrier mode).
+
+---
+
+## 🌍 Real-World Applications
+
+This simulator demonstrates the exact physical principles behind technologies and natural phenomena:
 
 ### 1. Modern Electronics (Transistors) ⚛️
-
 * **Context:** 5nm and 3nm chips (Apple Silicon, NVIDIA, AMD).
-* **Physics:** Electrons tunnel through insulating barriers (gate oxide), causing "leakage current." This is the fundamental physical limit of Moore's Law.
+* **Physics:** Electrons tunnel through insulating barriers (gate oxide), causing "leakage current." This is the fundamental limit of Moore's Law.
 
 ### 2. Scanning Tunneling Microscope (STM) 🔬
-
 * **Context:** Nanotechnology labs (IBM, CERN).
-* **Physics:** A conductive tip detects atoms without touching them. The current depends exponentially on the tunneling distance, allowing for atomic-scale imaging.
+* **Physics:** A conductive tip detects atoms without touching them. The current depends exponentially on the tunneling distance.
 
 ### 3. Nuclear Fusion (The Sun) ☀️
-
 * **Context:** Astrophysics and ITER.
-* **Physics:** Protons naturally repel each other. Tunneling allows them to breach the **Coulomb Barrier** and fuse, powering stars. Without this, the Sun would not shine.
+* **Physics:** Protons repel each other. Tunneling allows them to breach the **Coulomb Barrier** and fuse, powering stars. Without this, the Sun would not shine.
 
-### 4. Alpha Decay ☢️
+### 4. Quantum Biology (Photosynthesis) 🧬
+* **Context:** Plants and Bacteria (FMO Complex).
+* **Physics:** Modeled in the **"Bio-Quantum"** mode. Excitons use quantum superposition to explore all paths simultaneously, finding the reaction center with near 100% efficiency.
 
-* **Context:** Nuclear physics and carbon dating.
-* **Physics:** Alpha particles do not have enough classical energy to escape the nucleus, yet they tunnel out over time, defining the half-life of elements.
-
-### 5. Quantum Biology & Chemistry 🧬
-
-* **Context:** Photosynthesis and enzymatic reactions.
-* **Physics:** Electrons and protons tunnel through potential barriers within cells to accelerate chemical reactions essential for life.
+### 5. Resonant Tunneling Diodes 🔮
+* **Context:** High-frequency oscillators (Terahertz).
+* **Physics:** Modeled in the **"Double Barrier"** mode. Waves pass through two barriers perfectly when their energy matches the system's resonance frequency.
 
 ---
 
 ## 🚀 Installation & Usage
 
 ### 1. Prerequisites
-
 Ensure you have Python 3.10+ installed.
 
 ```bash
 pip install numpy scipy pyqt6 pyqtgraph PyOpenGL PyOpenGL_accelerate
-
-```
-
-### 2. Running the Simulator
-
-Launch the main application to access the unified dashboard (2D and 3D modes):
-
-```bash
-python main.py
-
-```
-
-### 3. Controls
-
-* **Space / Pause Button:** Freeze time.
-* **Mode Switch:** Toggle between 1D, 3D Radial, and 3D Surface views.
-* **Sliders:** Adjust simulation speed and barrier height.
-
----
-
-## 📚 Educational Scope
-
-This tool is designed for:
-
-* **Undergraduate Physics:** Visualizing wave mechanics.
-* **Computational Physics:** Demonstrating spectral methods.
-* **Public Outreach:** Showing the non-intuitive nature of the quantum world.
-
-> *"If you are not shocked by quantum physics, you have not understood it."* — Niels Bohr
-
----
-
-**Developed by Arildo Yank** *Field Service Engineer & Software Developer*
